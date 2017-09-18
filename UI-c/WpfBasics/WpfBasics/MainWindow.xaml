@@ -1,0 +1,71 @@
+﻿<Window x:Class="WpfBasics.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfBasics"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="520" Width="450">
+
+    <Border Padding="10">
+        <StackPanel Margin="0 0 0 0">
+
+            <!--cel-->
+            <TextBlock Text="Wybierz problem/cel:" FontWeight="Bold" Margin="0 10" />
+            <ComboBox x:Name="ProblemComboBoxText" Padding="2" Margin="0,0,0.4,0" SelectionChanged="ProblemComboBoxText_SelectionChanged">
+                <ComboBoxItem Selected="ComboBoxItem_Selected" Content="Chroniczne zmęczenie"/>
+                <ComboBoxItem Selected="ComboBoxItem_Selected_1" Content="Słaby sen"/>
+            </ComboBox>
+
+           
+
+            <!--opis dolegliwości-->
+            <TextBox TextWrapping="Wrap" x:Name="OpisDolegliwosciTextBox" Text="Opis dolegliwości.." Margin="0 10 0 10" Height="90" TextChanged="OpisDolegliwosciTextBox_TextChanged" />
+
+            <!--przyczyny-->
+            <TextBox TextWrapping="Wrap" x:Name="PrzyczynyTextBox" Text="Przyczyny..." Margin="0 0 0 10" Height="90" TextChanged="PrzyczynyTextBox_TextChanged" />
+
+            <!--grid wybierz suplement-->
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock TextWrapping="Wrap" Grid.Column="0" Text="Wybierz suplementację:" Margin="0 0 0 10" />
+                <ComboBox x:Name="SuplementComboBox" Grid.Column="1" Margin="0 0 0 10" Width="150" SelectionChanged="SuplementComboBox_SelectionChanged">
+                    <ComboBoxItem Selected="Suplement1_Selected" Content="Ashwagandha"/>
+                    <ComboBoxItem Selected="Suplement2_Selected" Content="Gotu Kola"/>
+                </ComboBox>
+
+            </Grid>
+
+            <!--grid wybrany suplement i nazwa-->
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="199*"/>
+                    <ColumnDefinition Width="143*"/>
+                    <ColumnDefinition Width="56*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Text="Wybrany suplement:" Margin="0,0,142.252,9.6" Grid.ColumnSpan="2" />
+                <TextBlock x:Name="NazwaSuplementuText" Text="Nazwa suplementu" Margin="199,0,-0.6,9.6" FontWeight="Bold" Grid.ColumnSpan="3" Height="16" VerticalAlignment="Bottom"/>
+
+            </Grid>
+
+            <!--opis suplementu textbox-->
+            <TextBox TextWrapping="Wrap" x:Name="OpisSuplementuTextBox" Text="Opis suplementu..." Height="70" Margin="0 0 0 10" TextChanged="OpisSuplementuTextBox_TextChanged"/>
+
+            <!--jak stosować textbox-->
+            <TextBox TextWrapping="Wrap" x:Name="StosowanieTextBox" Text="Jak stosować..." Padding="1" Margin="0 0 0 10" Height="30" TextChanged="StosowanieTextBox_TextChanged" />
+
+            <!--link do sklepu textblock-->
+            <TextBlock TextWrapping="Wrap" x:Name="LinkTextblock"  Margin="0 0 0 0" Text="Link do sklepu" />
+
+
+        </StackPanel>
+
+    </Border>
+</Window>
