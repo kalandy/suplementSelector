@@ -12,18 +12,18 @@
 
             <!--cel-->
             <TextBlock Text="Wybierz problem/cel:" FontWeight="Bold" Margin="0 10" />
-            <ComboBox x:Name="ProblemComboBoxText" Padding="2" Margin="0,0,0.4,0" SelectionChanged="ProblemComboBoxText_SelectionChanged">
-                <ComboBoxItem Selected="ComboBoxItem_Selected" Content="Chroniczne zmęczenie"/>
-                <ComboBoxItem Selected="ComboBoxItem_Selected_1" Content="Słaby sen"/>
+            <ComboBox x:Name="ProblemComboBoxText" Padding="2" Margin="0,0,0.4,0" SelectionChanged="ProblemComboBoxText_SelectionChanged" ItemsSource="{Binding AllHealthProblems}">
+                <!--<ComboBoxItem Selected="ComboBoxItem_Selected" Content="Chroniczne zmęczenie"/>-->
+                <!--<ComboBoxItem Selected="ComboBoxItem_Selected_1" Content="Słaby sen"/>-->
             </ComboBox>
 
            
 
             <!--opis dolegliwości-->
-            <TextBox TextWrapping="Wrap" x:Name="OpisDolegliwosciTextBox" Text="Opis dolegliwości.." Margin="0 10 0 10" Height="90" TextChanged="OpisDolegliwosciTextBox_TextChanged" />
+            <TextBox TextWrapping="Wrap" x:Name="OpisDolegliwosciTextBox" Text="{Binding SelectedHealthProblem.Description}" Margin="0 10 0 10" Height="90" TextChanged="OpisDolegliwosciTextBox_TextChanged" />
 
             <!--przyczyny-->
-            <TextBox TextWrapping="Wrap" x:Name="PrzyczynyTextBox" Text="Przyczyny..." Margin="0 0 0 10" Height="90" TextChanged="PrzyczynyTextBox_TextChanged" />
+            <TextBox TextWrapping="Wrap" x:Name="PrzyczynyTextBox" Text="{Binding SelectedHealthProblem.Cause}" Margin="0 0 0 10" Height="90" TextChanged="PrzyczynyTextBox_TextChanged" />
 
             <!--grid wybierz suplement-->
             <Grid>
@@ -34,10 +34,9 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBlock TextWrapping="Wrap" Grid.Column="0" Text="Wybierz suplementację:" Margin="0 0 0 10" />
-                <ComboBox x:Name="SuplementComboBox" Grid.Column="1" Margin="0 0 0 10" Width="150" SelectionChanged="SuplementComboBox_SelectionChanged">
-                    <ComboBoxItem Selected="Suplement1_Selected" Content="Ashwagandha"/>
-                    <ComboBoxItem Selected="Suplement2_Selected" Content="Gotu Kola"/>
-                </ComboBox>
+                <ComboBox x:Name="SuplementComboBox" Grid.Column="1" Margin="0 0 0 10" Width="150" SelectionChanged="SuplementComboBox_SelectionChanged" ItemsSource="{Binding SelectedHealthProblem.Suplements}" />
+               
+
 
             </Grid>
 
@@ -54,7 +53,7 @@
                 <TextBlock x:Name="NazwaSuplementuText" Text="Nazwa suplementu" Margin="199,0,-0.6,9.6" FontWeight="Bold" Grid.ColumnSpan="3" Height="16" VerticalAlignment="Bottom"/>
 
             </Grid>
-
+            <!--TODO: Dodać Binding dla suplementu-->
             <!--opis suplementu textbox-->
             <TextBox TextWrapping="Wrap" x:Name="OpisSuplementuTextBox" Text="Opis suplementu..." Height="70" Margin="0 0 0 10" TextChanged="OpisSuplementuTextBox_TextChanged"/>
 

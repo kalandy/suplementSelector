@@ -12,22 +12,56 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfBasics.Data;
 
 namespace WpfBasics
 {
     /// <summary>
     /// Logika interakcji dla klasy MainWindow.xaml
     /// </summary>
+    /// 
+ 
+
     public partial class MainWindow : Window
     {
+        SelectedItem selectedItem;
+
         public MainWindow()
         {
+            HealthProblem healthProblem = new HealthProblem();
+            healthProblem.Name = "Zespół przewlekłego zmęczenia";
+            healthProblem.Description = "Zespół przewlekłego zmęczenia (ang. Chronic Fatigue Syndrome, CFS) obecnie jest uznawany za chorobę cywilizacyjną." +
+                " Cierpią na nią przede wszystkim młode, aktywne kobiety, pracujące zawodowo i opiekujące się dziećmi oraz domem. Zmęczenie polega na tym," +
+                " że uczucie wyczerpania towarzyszy przez kilka tygodni, mimo długiego wypoczynku. Chroniczne zmęczenie ogranicza aktywność człowieka o ponad 50%." +
+                " Objawy przewlekłego zmęczenia występują zarówno u osób zdrowych, jak i cierpiących na choroby somatyczne oraz niektóre zaburzenia psychiczne.";
+            healthProblem.Cause = "Jakas przyczyna";
+
+            Suplement suplement = new Suplement();
+            suplement.Name = "Ashwagandha";
+
+
+            healthProblem.Suplements = new List<Suplement>(new Suplement[] { suplement, suplement });
+
+
+            selectedItem = new SelectedItem();
+            selectedItem.AllHealthProblems = new List<HealthProblem>(new HealthProblem[] { healthProblem });
+        
+
+            //TODO: DOdac obiekty
+
+
+
+
+            this.DataContext = selectedItem;
+
+
             InitializeComponent();
         }
 
         private void SuplementComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            this.NazwaSuplementuText.Text = (string)((ComboBoxItem)((ComboBox)sender).SelectedValue).Content;
+            selectedItem.SelectedSuplement = ((Suplement)((ComboBox)sender).SelectedValue);
+
         }
 
         private void ComboBoxItem_Selected(object sender, RoutedEventArgs e)
@@ -99,7 +133,7 @@ namespace WpfBasics
 
         private void ProblemComboBoxText_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            this.selectedItem.SelectedHealthProblem = (HealthProblem)((ComboBox)sender).SelectedValue;
         }
     }
 
