@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfBasics"
         mc:Ignorable="d"
-        Title="MainWindow" Height="520" Width="450">
+        Title="MainWindow" Height="550" Width="450">
 
     <Border Padding="10">
         <StackPanel Margin="0 0 0 0">
@@ -58,10 +58,10 @@
             <TextBox TextWrapping="Wrap" x:Name="OpisSuplementuTextBox" Text="{Binding SelectedSuplement.SuplementDescription}" Height="70" Margin="0 0 0 10" TextChanged="OpisSuplementuTextBox_TextChanged"/>
 
             <!--jak stosować textbox-->
-            <TextBox TextWrapping="Wrap" x:Name="StosowanieTextBox" Text="{Binding SelectedSuplement.HowTo}" Padding="1" Margin="0 0 0 10" Height="30" TextChanged="StosowanieTextBox_TextChanged" />
+            <TextBox TextWrapping="Wrap" x:Name="StosowanieTextBox" Text="{Binding SelectedSuplement.HowTo}" Padding="1" Margin="0 0 0 10" Height="60" TextChanged="StosowanieTextBox_TextChanged" />
 
             <!--link do sklepu textblock-->
-            <TextBlock TextWrapping="Wrap" x:Name="LinkTextblock" Text="{Binding SelectedSuplement.LinkUrl}" Margin="0 0 0 0" />
+            <TextBlock TextWrapping="Wrap" x:Name="LinkTextblock"  Text="{Binding SelectedSuplement.LinkUrl}" Margin="0 0 0 0" />
 
 
         </StackPanel>
