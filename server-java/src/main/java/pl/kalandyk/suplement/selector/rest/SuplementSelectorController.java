@@ -3,12 +3,16 @@ package pl.kalandyk.suplement.selector.rest;
 /**
  * Created by marcinkalandyk on 24.04.2017.
  */
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import pl.kalandyk.suplement.selector.domain.Suplement;
 import pl.kalandyk.suplement.selector.domain.HealthProblem;
+import pl.kalandyk.suplement.selector.repository.HealthProblemRepository;
+import pl.kalandyk.suplement.selector.repository.SuplementRepository;
 
 
 import javax.naming.Name;
@@ -16,9 +20,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-public class HelloWorldController {
+public class SuplementSelectorController {
+
+    private SuplementRepository suplementRepository;
+    private HealthProblemRepository healthProblemRepository;
 
 
+    @Autowired
+    public SuplementSelectorController(SuplementRepository suplementRepository, HealthProblemRepository healthProblemRepository) {
+        this.suplementRepository = suplementRepository;
+        this.healthProblemRepository = healthProblemRepository;
+
+        List<Suplement> suplements = new ArrayList<>();
+        initSuplements(suplements);
+        this.suplementRepository.save(suplements);
+
+        List<HealthProblem> healthProblems = new ArrayList<>();
+        initHealthProblems(healthProblems);
+
+        for (HealthProblem healthProblem : healthProblems) {
+            for (Suplement suplement : healthProblem.getSuplements()) {
+                this.suplementRepository.save(suplement);
+
+            }
+
+
+        }
+
+        healthProblemRepository.save(healthProblems);
+    }
 
     @RequestMapping(value = "/suplement", method = RequestMethod.GET, produces = "application/json")
     public List<Suplement> getSuplements() {
@@ -58,10 +88,12 @@ public class HelloWorldController {
         suplement3.setHowTo("Standardowa dobowa dawka L-DOPA wynosi od 150 do 500 mg. Ilość tę można przyjąć jednorazowo lub rozbić na kilka porcji. Najkorzystniej jest stosować ją przed posiłkiem, zwłaszcza bogatym w węglowodany i ubogim w białka.");
         suplement3.setLinkUrl("http://www.muscle-zone.pl/lepsze-samopoczucie/l-dopa-90-kaps");
 
+
         suplements.add(suplement1);
         suplements.add(suplement2);
         suplements.add(suplement3);
     }
+
     private void initSuplements2(List<Suplement> suplements) {
         Suplement suplement1 = new Suplement();
         suplement1.setName("5-HTP");
@@ -109,6 +141,7 @@ public class HelloWorldController {
         suplements.add(suplement2);
         suplements.add(suplement3);
     }
+
     private void initSuplements4(List<Suplement> suplements) {
 
         Suplement suplement1 = new Suplement();
@@ -128,7 +161,6 @@ public class HelloWorldController {
         suplement3.setSuplementDescription("Bacopa monnieri (inaczej Brahmi) to jedno z najbardziej oryginalnych ziół indyjskich. Mówi się, że jego nazwa pochodzi od słowa Brahman, oznaczającego „uniwersalną świadomość”, co idealnie odzwierciedla główne działanie tej rośliny.Bacopa monnieri stanowi ogromne wsparcie dla układu nerwowego - stymuluje zwłaszcza część odpowiedzialną za procesy pamięciowe.Oprócz udowodnionych właściwości nootropowych i neuroprotekcyjnych, Bacopa wykazuje również silne działanie przeciwlękowe. Wspomaga leczenie nerwicy, jest z powodzeniem wykorzystywana w terapii nadpobudliwości i ADHD, a w przypadku depresji wykazuje skuteczność porównywalną do TLPD (trójpierścieniowe leki przeciwdepresyjne).");
         suplement3.setHowTo("Standardowa, skuteczna dawka Brahmi wynosi 200 – 300 mg na dobę i dotyczy ekstraktu standaryzowanego na 50% bakozydów. Najlepiej jest rozbić tę ilość na kilka mniejszych porcji.");
         suplement3.setLinkUrl("http://www.muscle-zone.pl/adaptogeny/bacopa-monnieri-100-kaps");
-
 
 
         suplements.add(suplement1);
@@ -173,7 +205,6 @@ public class HelloWorldController {
         healthProblems.add(healthProblem2);
         healthProblems.add(healthProblem3);
         healthProblems.add(healthProblem4);
-
 
 
     }
