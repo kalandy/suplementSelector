@@ -6,66 +6,59 @@ package pl.kalandyk.suplement.selector.domain;
 public class Suplement {
 
     private String name;
-    private Double price;
-    private String description;
-    private Short energy;
-    private Short prohealthAction;
+    private String suplementDescription;
+    private String howTo;
+    private String linkUrl;
+
 
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
 
-    public Double getPrice() {
-        return price;
+
+    public String getSuplementDescription() {
+        return suplementDescription;
+    }
+    public void setSuplementDescription(String suplementDescription) {
+        this.suplementDescription = suplementDescription;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+    public String getHowTo() {
+        return howTo;
+    }
+    public void setHowTo(String howTo) {
+        this.howTo = howTo;
     }
 
-    public String getDescription() {
-        return description;
+    public String getLinkUrl() {
+        return linkUrl;
+    }
+    public void setLinkUrl(String linkUrl) {
+        this.linkUrl = linkUrl;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
 
-    public Short getEnergy() {
-        return energy;
-    }
-
-    public void setEnergy(Short energy) {
-        this.energy = energy;
-    }
-
-    public Short getProhealthAction() {
-        return prohealthAction;
-    }
 
     @Override
     public String toString() {
         return "Suplement{" +
                 "name='" + name + '\'' +
-                ", price=" + price +
-                ", description='" + description + '\'' +
-                ", energy=" + energy +
-                ", prohealthAction=" + prohealthAction +
+                ", suplementDescription='" + suplementDescription + '\'' +
+                ", howTo=" + howTo +
+                ", linkUrl=" + linkUrl +
                 '}';
-    }
-
-    public void setProhealthAction(Short prohealthAction) {
-        this.prohealthAction = prohealthAction;
     }
 
     public static void main(String[] args) {
         Suplement suplement = new Suplement();
         suplement.setName("Ashwagandha");
+        suplement.setSuplementDescription("blabla");
+        suplement.setHowTo("ssupdesc");
         System.out.println(suplement);
 
     }
+
 }

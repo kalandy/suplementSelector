@@ -9,13 +9,17 @@ public class HealthProblem {
 
     private String name;
     private String description;
+    private String cause;
 
-    private List<Suplement> recommendedSupplements;
+    private List<Suplement> suplements;
+
+    public HealthProblem() {
+    }
+
 
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -23,16 +27,23 @@ public class HealthProblem {
     public String getDescription() {
         return description;
     }
-
     public void setDescription(String description) {
         this.description = description;
     }
 
-    public List<Suplement> getRecommendedSupplements() {
-        return recommendedSupplements;
+    public String getCause() {
+        return cause;
+    }
+    public void setCause(String cause) {
+        this.cause = cause;
     }
 
-    public void setRecommendedSupplements(List<Suplement> recommendedSupplements) {
-        this.recommendedSupplements = recommendedSupplements;
+    public List<Suplement> getSuplements() {
+        return suplements;
     }
+
+    public void setSuplements(List<Suplement> recommendedSuplements) {
+        this.suplements = recommendedSuplements;
+    }
+
 }
