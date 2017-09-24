@@ -61,7 +61,12 @@
             <TextBox TextWrapping="Wrap" x:Name="StosowanieTextBox" Text="{Binding SelectedSuplement.HowTo}" Padding="1" Margin="0 0 0 10" Height="60" TextChanged="StosowanieTextBox_TextChanged" />
 
             <!--link do sklepu textblock-->
-            <TextBlock TextWrapping="Wrap" x:Name="LinkTextblock"  Text="{Binding SelectedSuplement.LinkUrl}" Margin="0 0 0 0" />
+            <TextBlock>           
+            <Hyperlink NavigateUri="{Binding SelectedSuplement.LinkUrl}" RequestNavigate="Hyperlink_RequestNavigate">
+            Link do strony z ofertą suplementu
+            </Hyperlink>
+            </TextBlock>
+            <!--<TextBlock TextWrapping="Wrap" x:Name="LinkTextblock"  Text="{Binding SelectedSuplement.LinkUrl}" Margin="0 0 0 0" />-->
 
 
         </StackPanel>
