@@ -56,7 +56,29 @@ namespace WpfBasics.Data
             set;
         }
 
-        //TODO: dodac reszte pol
+        public String ChosenSuplement
+        {
+            get;
+            set;
+        }
+
+        public String SuplementDescription
+        {
+            get;
+            set;
+        }
+
+        public String HowTo
+        {
+            get;
+            set;
+        }
+
+        public String LinkUrl
+        {
+            get;
+            set;
+        }
 
         public override string ToString()
         {

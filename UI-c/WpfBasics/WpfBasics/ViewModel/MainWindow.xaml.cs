@@ -38,16 +38,52 @@ namespace WpfBasics
 
             Suplement suplement = new Suplement();
             suplement.Name = "Ashwagandha";
+            suplement.ChosenSuplement = suplement.Name;
+            suplement.SuplementDescription = "opis";
+            suplement.HowTo = "3 razy dziennie po 600mg";
+            suplement.LinkUrl = "www.muscle-zone.pl/ashwa";
+
+            Suplement suplement1 = new Suplement();
+            suplement1.Name = "Rhodiola";
+            suplement1.ChosenSuplement = suplement1.Name;
+            suplement1.SuplementDescription = "opis1";
+            suplement1.HowTo = "3 razy dziennie po 500mg";
+            suplement1.LinkUrl = "www.muscle-zone.pl/rhodiola";
 
 
-            healthProblem.Suplements = new List<Suplement>(new Suplement[] { suplement, suplement });
+
+            healthProblem.Suplements = new List<Suplement>(new Suplement[] { suplement, suplement1 });
+
+
+            //TODO: DOdac obiekty
+
+            HealthProblem healthProblem1 = new HealthProblem();
+            healthProblem1.Name = "Słaby sen";
+            healthProblem1.Description = "bla";
+            healthProblem1.Cause = "abl";
+
+            Suplement suplement3 = new Suplement();
+            suplement3.Name = "5-HTP";
+            suplement3.ChosenSuplement = suplement3.Name;
+            suplement3.SuplementDescription = "opis3";
+            suplement3.HowTo = "3 razy dziennie po 400mg";
+            suplement3.LinkUrl = "www.muscle-zone.pl/5-htp";
+
+
+            Suplement suplement4 = new Suplement();
+            suplement4.Name = "GABA";
+            suplement4.ChosenSuplement = suplement4.Name;
+            suplement4.SuplementDescription = "opis4";
+            suplement4.HowTo = "3 razy dziennie po 1 tabletce";
+            suplement4.LinkUrl = "www.muscle-zone.pl/gaba";
+
+
+            healthProblem1.Suplements = new List<Suplement>(new Suplement[] { suplement3, suplement4 });
 
 
             selectedItem = new SelectedItem();
-            selectedItem.AllHealthProblems = new List<HealthProblem>(new HealthProblem[] { healthProblem });
-        
+            selectedItem.AllHealthProblems = new List<HealthProblem>(new HealthProblem[] { healthProblem, healthProblem1 });
 
-            //TODO: DOdac obiekty
 
 
 
@@ -64,32 +100,6 @@ namespace WpfBasics
 
         }
 
-        private void ComboBoxItem_Selected(object sender, RoutedEventArgs e)
-        {
-            this.OpisDolegliwosciTextBox.Text = "Zespół przewlekłego zmęczenia (ang. Chronic Fatigue Syndrome, CFS) obecnie jest uznawany za chorobę cywilizacyjną." +
-                " Cierpią na nią przede wszystkim młode, aktywne kobiety, pracujące zawodowo i opiekujące się dziećmi oraz domem. Zmęczenie polega na tym," +
-                " że uczucie wyczerpania towarzyszy przez kilka tygodni, mimo długiego wypoczynku. Chroniczne zmęczenie ogranicza aktywność człowieka o ponad 50%." +
-                " Objawy przewlekłego zmęczenia występują zarówno u osób zdrowych, jak i cierpiących na choroby somatyczne oraz niektóre zaburzenia psychiczne.";
-
-            this.PrzyczynyTextBox.Text = "Istnieje kilka przyczyn zespołu chronicznego zmęczenia, do których można zaliczyć:zbyt szybkie tempo" +
-                " życia, stres,życie pod ciągłą presją,małą ilość snu i brak odpoczynku,nadodpowiedzialność," +
-                "osobowość typu WZA,złą dietę,tzw. „wyścig szczurów”. ";
-
-
-           
-        }
-
-        private void ComboBoxItem_Selected_1(object sender, RoutedEventArgs e)
-        {
-            this.OpisDolegliwosciTextBox.Text = "Mało nasilone, trwające do kilku dni zaburzenia snu występują powszechnie." +
-                " Trudności w zasypianiu, niespokojny sen, budzenie się w nocy, uczucie niewyspania i złe samopoczucie w ciągu dnia – to wszystko mogło przydarzyć się każdemu z nas." +
-                " Tego rodzaju zaburzenia snu mają za swoją przyczynę stres i związane z nim silne emocje jak złość, obawy, rozczarowania i radości.";
-
-
-            this.PrzyczynyTextBox.Text = "Pierwszą, oczywistą, ale też najpowszechniejszą przyczyną takiego stanu" +
-                " rzeczy jest niewystarczająca ilość przespanych godzin w ciągu nocy. ";
-        }
-
         private void OpisDolegliwosciTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
@@ -99,27 +109,6 @@ namespace WpfBasics
         {
 
         }
-
-        private void Suplement1_Selected(object sender, RoutedEventArgs e)
-        {
-            this.OpisSuplementuTextBox.Text = "Najnowsze badania określają Ashwagandhę jako roślinę" +
-                " o właściwościach adaptogennych dzięki zawartości substancji o działaniu farmakologicznym.";
-
-            this.StosowanieTextBox.Text = "2 razy dziennie po 400mg";
-
-            this.LinkTextblock.Text = "http://www.muscle-zone.pl/adaptogeny/apollos-ashwagandha-60-kaps";
-}
-
-        private void Suplement2_Selected(object sender, RoutedEventArgs e)
-        {
-            this.OpisSuplementuTextBox.Text = " Odpowiednia dawka ziela Gotu Kola potrafi pomóc przy żylakach, słabej pamięci," +
-                " trudno gojących się ranach, a także zmniejsza powstawanie blizn i cellulitu.";
-
-            this.StosowanieTextBox.Text = "2 razy dziennie po 500mg";
-
-            this.LinkTextblock.Text = "http://www.muscle-zone.pl/adaptogeny/gotu-kola-double-extract-100-kaps";
-        }
-
       
         private void OpisSuplementuTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {

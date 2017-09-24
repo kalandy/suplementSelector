@@ -50,21 +50,22 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Grid.Column="0" Text="Wybrany suplement:" Margin="0,0,142.252,9.6" Grid.ColumnSpan="2" />
-                <TextBlock x:Name="NazwaSuplementuText" Text="Nazwa suplementu" Margin="199,0,-0.6,9.6" FontWeight="Bold" Grid.ColumnSpan="3" Height="16" VerticalAlignment="Bottom"/>
+                <TextBlock x:Name="NazwaSuplementuText" Text="{Binding SelectedSuplement.ChosenSuplement}" Margin="199,0,-0.6,9.6" FontWeight="Bold" Grid.ColumnSpan="3" Height="16" VerticalAlignment="Bottom"/>
 
             </Grid>
             <!--TODO: Dodać Binding dla suplementu-->
             <!--opis suplementu textbox-->
-            <TextBox TextWrapping="Wrap" x:Name="OpisSuplementuTextBox" Text="Opis suplementu..." Height="70" Margin="0 0 0 10" TextChanged="OpisSuplementuTextBox_TextChanged"/>
+            <TextBox TextWrapping="Wrap" x:Name="OpisSuplementuTextBox" Text="{Binding SelectedSuplement.SuplementDescription}" Height="70" Margin="0 0 0 10" TextChanged="OpisSuplementuTextBox_TextChanged"/>
 
             <!--jak stosować textbox-->
-            <TextBox TextWrapping="Wrap" x:Name="StosowanieTextBox" Text="Jak stosować..." Padding="1" Margin="0 0 0 10" Height="30" TextChanged="StosowanieTextBox_TextChanged" />
+            <TextBox TextWrapping="Wrap" x:Name="StosowanieTextBox" Text="{Binding SelectedSuplement.HowTo}" Padding="1" Margin="0 0 0 10" Height="30" TextChanged="StosowanieTextBox_TextChanged" />
 
             <!--link do sklepu textblock-->
-            <TextBlock TextWrapping="Wrap" x:Name="LinkTextblock"  Margin="0 0 0 0" Text="Link do sklepu" />
+            <TextBlock TextWrapping="Wrap" x:Name="LinkTextblock" Text="{Binding SelectedSuplement.LinkUrl}" Margin="0 0 0 0" />
 
 
         </StackPanel>
 
     </Border>
 </Window>
+       
