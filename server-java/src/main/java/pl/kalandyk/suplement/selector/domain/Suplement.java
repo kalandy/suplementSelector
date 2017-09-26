@@ -6,66 +6,67 @@ package pl.kalandyk.suplement.selector.domain;
 public class Suplement {
 
     private String name;
-    private Double price;
-    private String description;
-    private Short energy;
-    private Short prohealthAction;
+    private String chosenSuplement;
+    private String suplementDesription;
+    private String howTo;
+    private String linkUrl;
+
 
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
 
-    public Double getPrice() {
-        return price;
+    public String getChosenSuplement() {
+        return chosenSuplement;
+    }
+    public void setChosenSuplement(String chosenSuplement) {
+        this.chosenSuplement = chosenSuplement;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+    public String getSuplementDesription() {
+        return suplementDesription;
+    }
+    public void setSuplementDesription(String suplementDesription) {
+        this.suplementDesription = suplementDesription;
     }
 
-    public String getDescription() {
-        return description;
+    public String getHowTo() {
+        return howTo;
+    }
+    public void setHowTo(String howTo) {
+        this.howTo = howTo;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public String getLinkUrl() {
+        return linkUrl;
+    }
+    public void setLinkUrl(String linkUrl) {
+        this.linkUrl = linkUrl;
     }
 
-    public Short getEnergy() {
-        return energy;
-    }
 
-    public void setEnergy(Short energy) {
-        this.energy = energy;
-    }
-
-    public Short getProhealthAction() {
-        return prohealthAction;
-    }
 
     @Override
     public String toString() {
         return "Suplement{" +
                 "name='" + name + '\'' +
-                ", price=" + price +
-                ", description='" + description + '\'' +
-                ", energy=" + energy +
-                ", prohealthAction=" + prohealthAction +
+                ", chosenSuplement=" + chosenSuplement +
+                ", suplementDescription='" + suplementDesription + '\'' +
+                ", howTo=" + howTo +
+                ", linkUrl=" + linkUrl +
                 '}';
-    }
-
-    public void setProhealthAction(Short prohealthAction) {
-        this.prohealthAction = prohealthAction;
     }
 
     public static void main(String[] args) {
         Suplement suplement = new Suplement();
         suplement.setName("Ashwagandha");
+        suplement.setSuplementDesription("blabla");
+        suplement.setHowTo("ssupdesc");
         System.out.println(suplement);
 
     }
+
 }
