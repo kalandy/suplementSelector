@@ -6,7 +6,7 @@ package pl.kalandyk.suplement.selector.domain;
 public class Suplement {
 
     private String name;
-    private String suplementDesription;
+    private String suplementDescription;
     private String howTo;
     private String linkUrl;
 
@@ -19,11 +19,11 @@ public class Suplement {
     }
 
 
-    public String getSuplementDesription() {
-        return suplementDesription;
+    public String getSuplementDescription() {
+        return suplementDescription;
     }
-    public void setSuplementDesription(String suplementDesription) {
-        this.suplementDesription = suplementDesription;
+    public void setSuplementDescription(String suplementDescription) {
+        this.suplementDescription = suplementDescription;
     }
 
     public String getHowTo() {
@@ -46,7 +46,7 @@ public class Suplement {
     public String toString() {
         return "Suplement{" +
                 "name='" + name + '\'' +
-                ", suplementDescription='" + suplementDesription + '\'' +
+                ", suplementDescription='" + suplementDescription + '\'' +
                 ", howTo=" + howTo +
                 ", linkUrl=" + linkUrl +
                 '}';
@@ -55,7 +55,7 @@ public class Suplement {
     public static void main(String[] args) {
         Suplement suplement = new Suplement();
         suplement.setName("Ashwagandha");
-        suplement.setSuplementDesription("blabla");
+        suplement.setSuplementDescription("blabla");
         suplement.setHowTo("ssupdesc");
         System.out.println(suplement);
 
