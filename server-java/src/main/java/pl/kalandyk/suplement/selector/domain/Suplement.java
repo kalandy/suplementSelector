@@ -6,7 +6,6 @@ package pl.kalandyk.suplement.selector.domain;
 public class Suplement {
 
     private String name;
-    private String chosenSuplement;
     private String suplementDesription;
     private String howTo;
     private String linkUrl;
@@ -19,12 +18,6 @@ public class Suplement {
         this.name = name;
     }
 
-    public String getChosenSuplement() {
-        return chosenSuplement;
-    }
-    public void setChosenSuplement(String chosenSuplement) {
-        this.chosenSuplement = chosenSuplement;
-    }
 
     public String getSuplementDesription() {
         return suplementDesription;
@@ -53,7 +46,6 @@ public class Suplement {
     public String toString() {
         return "Suplement{" +
                 "name='" + name + '\'' +
-                ", chosenSuplement=" + chosenSuplement +
                 ", suplementDescription='" + suplementDesription + '\'' +
                 ", howTo=" + howTo +
                 ", linkUrl=" + linkUrl +
