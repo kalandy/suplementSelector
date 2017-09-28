@@ -8,11 +8,11 @@ import javax.persistence.Id;
 /**
  * Created by marcinkalandyk on 02.05.2017.
  */
-@Entity
+@Entity // pokazanie springowi ze Suplement jest tabela w bazie danych
 public class Suplement {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO) //automatyczne generowanie id
     private Long id;
 
     private String name;

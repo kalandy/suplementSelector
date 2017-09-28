@@ -8,6 +8,8 @@ import org.hibernate.type.StringType;
 
 import java.sql.Types;
 
+//zaimplementowanie Dialektu sql dla Sqlite
+// LINK : https://github.com/bharat0126/springboot-sqlite-app
 public class SQLiteDialect extends Dialect {
 
     public SQLiteDialect() {
