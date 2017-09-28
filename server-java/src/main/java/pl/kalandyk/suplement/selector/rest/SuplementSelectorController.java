@@ -20,14 +20,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-public class HelloWorldController {
+public class SuplementSelectorController {
 
     private SuplementRepository suplementRepository;
     private HealthProblemRepository healthProblemRepository;
 
 
     @Autowired
-    public HelloWorldController(SuplementRepository suplementRepository, HealthProblemRepository healthProblemRepository) {
+    public SuplementSelectorController(SuplementRepository suplementRepository, HealthProblemRepository healthProblemRepository) {
         this.suplementRepository = suplementRepository;
         this.healthProblemRepository = healthProblemRepository;
 
