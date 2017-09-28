@@ -26,12 +26,16 @@ public class SuplementSelectorController {
         this.healthProblemRepository = healthProblemRepository;
     }
 
-    @RequestMapping(value = "/suplements", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/suplements", //adres
+            method = RequestMethod.GET, //typ zapytania
+            produces = "application/json") // zwracamy JSON'a
     public Iterable<Suplement> getSuplements() {
         return suplementRepository.findAll();
     }
 
-    @RequestMapping(value = "/healthProblems", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/healthProblems",//adres
+            method = RequestMethod.GET,//typ zapytania
+            produces = "application/json")// zwracamy JSON'a
     public Iterable<HealthProblem> getAllHealthProblems() {
         return healthProblemRepository.findAll();
     }
