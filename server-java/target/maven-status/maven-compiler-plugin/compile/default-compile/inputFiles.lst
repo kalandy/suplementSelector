@@ -1,0 +1,9 @@
+/Users/marcinkalandyk/Projects/suplementSelectorNew/server-java/src/main/java/pl/kalandyk/suplement/selector/test_data/TestData.java
+/Users/marcinkalandyk/Projects/suplementSelectorNew/server-java/src/main/java/pl/kalandyk/suplement/selector/config/SQLiteDialect.java
+/Users/marcinkalandyk/Projects/suplementSelectorNew/server-java/src/main/java/pl/kalandyk/suplement/selector/rest/SuplementSelectorController.java
+/Users/marcinkalandyk/Projects/suplementSelectorNew/server-java/src/main/java/pl/kalandyk/suplement/selector/domain/Suplement.java
+/Users/marcinkalandyk/Projects/suplementSelectorNew/server-java/src/main/java/pl/kalandyk/suplement/selector/repository/HealthProblemRepository.java
+/Users/marcinkalandyk/Projects/suplementSelectorNew/server-java/src/main/java/pl/kalandyk/suplement/selector/repository/SuplementRepository.java
+/Users/marcinkalandyk/Projects/suplementSelectorNew/server-java/src/main/java/pl/kalandyk/suplement/selector/Application.java
+/Users/marcinkalandyk/Projects/suplementSelectorNew/server-java/src/main/java/pl/kalandyk/suplement/selector/domain/HealthProblem.java
+/Users/marcinkalandyk/Projects/suplementSelectorNew/server-java/src/main/java/pl/kalandyk/suplement/selector/config/DbConfig.java
