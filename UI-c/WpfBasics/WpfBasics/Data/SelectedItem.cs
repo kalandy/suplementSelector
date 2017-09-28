@@ -12,13 +12,13 @@ namespace WpfBasics.Data
 
 {
     /*!
-* \brief Klasa SelectedItem, obsługa zdarzeń
+* \brief Klasa SelectedItem,biblioteka Fody, obsługa PropertyChanged
 *        
 * FodyWeavers notifypropertychanged
 */
     public class SelectedItem  : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged; /*!< tu używałem bilbioteki Fody */
 
         public SelectedItem()
         {

@@ -27,7 +27,7 @@ namespace WpfBasics
     /*!
 * \brief Klasa MainWindow, obsługa zdarzeń
 *        
-* ustawienie obiektu dla Bindingu, utworzenie dataLoader, metoda przekierowująca na stronę internetową
+* ustawienie obiektu dla Bindingu, utworzenie  obiektu dataLoader, metoda przekierowująca na stronę internetową
 */
     public partial class MainWindow : Window
     {

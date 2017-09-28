@@ -14,7 +14,7 @@ namespace WpfBasics.Data
 */
     public class HealthProblem : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged; /*!< tu używałem narzędzia Fody */
 
         public HealthProblem()
         {
@@ -58,7 +58,7 @@ namespace WpfBasics.Data
 */
     public class Suplement : INotifyPropertyChanged /*!< korzystanie z biblioteki Inotify */
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged; /*!< tu używałem narzędzia Fody */
 
         public String Name /*!< pobieranie i ustawianie wartości składowej nazwa suplementu */
         {

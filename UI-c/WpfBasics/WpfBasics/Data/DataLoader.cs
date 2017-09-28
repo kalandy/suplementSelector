@@ -11,16 +11,16 @@ namespace WpfBasics.Data
     /*!
   * \brief Klasa DataLoader, pobieranie danych
   *        
-  * ustawienie obiektu dla Bindingu, utworzenie dataLoader
+  * ustawienie obiektu dla Bindingu, utworzenie metody i klasy dataLoader, która ładuje dane
   */
 
     public class DataLoader
     {
         IHealthProblemsRestClient healthProblemsRest;
 
-        public DataLoader(IHealthProblemsRestClient healthProblemsRestClient)
+        public DataLoader(IHealthProblemsRestClient healthProblemsRestClient) 
         {
-            this.healthProblemsRest = healthProblemsRestClient;
+            this.healthProblemsRest = healthProblemsRestClient; /*!< ładowanie danych */
         }
 
         /*!
