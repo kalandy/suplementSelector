@@ -20,10 +20,10 @@
            
 
             <!--opis dolegliwości-->
-            <TextBox TextWrapping="Wrap" x:Name="OpisDolegliwosciTextBox" Text="{Binding SelectedHealthProblem.Description}" Margin="0 10 0 10" Height="90" TextChanged="OpisDolegliwosciTextBox_TextChanged" />
+            <TextBox TextWrapping="Wrap" x:Name="OpisDolegliwosciTextBox" Text="{Binding SelectedHealthProblem.Description}" Margin="0 10 0 10" Height="90" />
 
             <!--przyczyny-->
-            <TextBox TextWrapping="Wrap" x:Name="PrzyczynyTextBox" Text="{Binding SelectedHealthProblem.Cause}" Margin="0 0 0 10" Height="90" TextChanged="PrzyczynyTextBox_TextChanged" />
+            <TextBox TextWrapping="Wrap" x:Name="PrzyczynyTextBox" Text="{Binding SelectedHealthProblem.Cause}" Margin="0 0 0 10" Height="90"/>
 
             <!--grid wybierz suplement-->
             <Grid>
@@ -55,10 +55,10 @@
             </Grid>
             <!--TODO: Dodać Binding dla suplementu-->
             <!--opis suplementu textbox-->
-            <TextBox TextWrapping="Wrap" x:Name="OpisSuplementuTextBox" Text="{Binding SelectedSuplement.SuplementDescription}" Height="70" Margin="0 0 0 10" TextChanged="OpisSuplementuTextBox_TextChanged"/>
+            <TextBox TextWrapping="Wrap" x:Name="OpisSuplementuTextBox" Text="{Binding SelectedSuplement.SuplementDescription}" Height="70" Margin="0 0 0 10"/>
 
             <!--jak stosować textbox-->
-            <TextBox TextWrapping="Wrap" x:Name="StosowanieTextBox" Text="{Binding SelectedSuplement.HowTo}" Padding="1" Margin="0 0 0 10" Height="60" TextChanged="StosowanieTextBox_TextChanged" />
+            <TextBox TextWrapping="Wrap" x:Name="StosowanieTextBox" Text="{Binding SelectedSuplement.HowTo}" Padding="1" Margin="0 0 0 10" Height="60"/>
 
             <!--link do sklepu textblock-->
             <TextBlock>           
