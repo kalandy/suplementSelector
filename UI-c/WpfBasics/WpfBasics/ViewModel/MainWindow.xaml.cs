@@ -42,10 +42,11 @@ namespace WpfBasics
             //Konwersja JSON'a na obiekt z C#
             List<HealthProblem> healthProblems = JsonConvert.DeserializeObject<List<HealthProblem>>(healthProblemsString);
 
-          
+            //ustawienie danych dla UI
             selectedItem = new SelectedItem();
             selectedItem.AllHealthProblems = new List<HealthProblem>(healthProblems);
 
+            //ustawienie obiektu dla Bindingu
             this.DataContext = selectedItem;
 
 
