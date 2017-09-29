@@ -29,26 +29,14 @@ namespace WpfBasics
     {
         SelectedItem selectedItem;
 
+        DataLoader dataLoader = new DataLoader(new HealthProblemsRestClient());
+
         public MainWindow()
-        {
-            //http://restsharp.org/
-            //zobaczenie ip do hosta - ipconfig /all
-            RestClient restClient =  new RestClient("http://10.0.2.2:8080" /* adres serwera JAVovego, musi być włączony*/);
-            RestRequest restRequest = new RestRequest("healthProblems", Method.GET);
+        { 
 
-            //pobranie JSON'a
-            var healthProblemsString = restClient.Execute(restRequest).Content;
-
-            //Konwersja JSON'a na obiekt z C#
-            List<HealthProblem> healthProblems = JsonConvert.DeserializeObject<List<HealthProblem>>(healthProblemsString);
-
-            //ustawienie danych dla UI
-            selectedItem = new SelectedItem();
-            selectedItem.AllHealthProblems = new List<HealthProblem>(healthProblems);
-
+            selectedItem = dataLoader.LoadData();
             //ustawienie obiektu dla Bindingu
             this.DataContext = selectedItem;
-
 
             InitializeComponent();
         }
