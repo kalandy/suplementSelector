@@ -21,7 +21,7 @@ namespace WpfBasics.Data
 
         public SelectedItem LoadData()
         {
-            var healthProblemsString = healthProblemsRest.LoadData();
+            var healthProblemsString = healthProblemsRest.GetHealthProblemsJson();
 
             //Konwersja JSON'a na obiekt z C#
             List<HealthProblem> healthProblems = JsonConvert.DeserializeObject<List<HealthProblem>>(healthProblemsString);
@@ -29,6 +29,8 @@ namespace WpfBasics.Data
             //ustawienie danych dla UI
             SelectedItem selectedItem = new SelectedItem();
             selectedItem.AllHealthProblems = new List<HealthProblem>(healthProblems);
+            selectedItem.SelectedHealthProblem = null;
+            selectedItem.SelectedSuplement = null;
 
             return selectedItem;
         }

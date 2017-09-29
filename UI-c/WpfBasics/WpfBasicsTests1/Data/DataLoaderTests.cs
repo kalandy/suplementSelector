@@ -18,22 +18,41 @@ namespace WpfBasics.Data.Tests
         [TestMethod()]
         public void DataLoaderTest()
         {
+            //given
             Mock<IHealthProblemsRestClient> restMock = new Mock<IHealthProblemsRestClient>();
 
             DataLoader dataLoader = new DataLoader((IHealthProblemsRestClient)restMock.Object);
-            restMock.Setup(x => x.LoadData()).Returns(@"");
+            restMock.Setup(x => x.GetHealthProblemsJson()).Returns(@"[
+                {
+                ""name"": ""Problem1"",
+                ""description"": ""opis1"",
+                ""suplements"": [
+                    {
+                    ""name"": ""Suplement1"",
+                    ""suplementDescription"": ""opisSupl1"",
+                    ""howTo"": ""howTo1"",
+                    ""linkUrl"": ""link1""
+                    }]
+                }]");
 
-            var result = dataLoader.LoadData();
+            //when
+            SelectedItem result = dataLoader.LoadData();
 
+            //then
+            Assert.IsNull(result.SelectedHealthProblem);
+            Assert.IsNull(result.SelectedSuplement);
 
+            Assert.AreEqual(result.AllHealthProblems.Count, 1);
 
-            Assert.Fail();
-        }
+            HealthProblem healthProblem = result.AllHealthProblems.ElementAt(0);
+            Assert.AreEqual(healthProblem.Name, "Problem1");
+            Assert.AreEqual(healthProblem.Description, "opis1");
+            Assert.AreEqual(healthProblem.Suplements.Count, 1);
+            Assert.AreEqual(healthProblem.Suplements.ElementAt(0).Name, "Suplement1");
+            Assert.AreEqual(healthProblem.Suplements.ElementAt(0).SuplementDescription, "opisSupl1");
+            Assert.AreEqual(healthProblem.Suplements.ElementAt(0).LinkUrl, "link1");
+            Assert.AreEqual(healthProblem.Suplements.ElementAt(0).HowTo, "howTo1");
 
-        [TestMethod()]
-        public void LoadDataTest()
-        {
-            Assert.Fail();
         }
     }
 }

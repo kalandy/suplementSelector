@@ -15,7 +15,7 @@ namespace WpfBasics.Data
         RestRequest restRequest = new RestRequest("healthProblems", Method.GET);
 
 
-        public string LoadData() {
+        public string GetHealthProblemsJson() {
             //pobranie JSON'a
             return restClient.Execute(restRequest).Content;
         }
