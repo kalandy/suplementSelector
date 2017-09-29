@@ -6,21 +6,25 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
 
+/*!
+* \brief Klasa DbConfig, Klasa konfigurująca bazę danych
+ *
+ * Klasa konfigurująca bazę danych
+*/
 @Configuration
 public class DbConfig {
 
-    /**
-     * Pokazanie springowi namiary na baze danych
-     */
+
+    /*!
+* \brief Pokazanie springowi namiarów na baze danych
+*/
     @Bean
-    public DataSource dataSource() {
+    public DataSource dataSource() { /*!< ustawienia sterownika do bazy danych,adres do bazy (w pliku) */
         DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
 
-        //ustawienia sterownika do bazy danych
-        dataSourceBuilder.driverClassName("org.sqlite.JDBC");
+        dataSourceBuilder.driverClassName("org.sqlite.JDBC"); //ustawienia sterownika do bazy danych
 
-        //adres do bazy (w pliku)
-        dataSourceBuilder.url("jdbc:sqlite:suplementSelector.db");
+        dataSourceBuilder.url("jdbc:sqlite:suplementSelector.db"); //adres do bazy (w pliku)
 
         return dataSourceBuilder.build();
     }
