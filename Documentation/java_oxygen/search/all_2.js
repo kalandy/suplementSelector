@@ -1,0 +1,12 @@
+var searchData=
+[
+  ['getallhealthproblems',['getAllHealthProblems',['../classpl_1_1kalandyk_1_1suplement_1_1selector_1_1rest_1_1_suplement_selector_controller.html#a410e10903c82dcfdf598c2344598fa94',1,'pl::kalandyk::suplement::selector::rest::SuplementSelectorController']]],
+  ['getcause',['getCause',['../classpl_1_1kalandyk_1_1suplement_1_1selector_1_1domain_1_1_health_problem.html#ae53f36302107f752f6ea1c3e04405563',1,'pl::kalandyk::suplement::selector::domain::HealthProblem']]],
+  ['getdescription',['getDescription',['../classpl_1_1kalandyk_1_1suplement_1_1selector_1_1domain_1_1_health_problem.html#a3dd98bc972b3df0932031f50355e314e',1,'pl::kalandyk::suplement::selector::domain::HealthProblem']]],
+  ['gethowto',['getHowTo',['../classpl_1_1kalandyk_1_1suplement_1_1selector_1_1domain_1_1_suplement.html#a854a846c63a4dfc318fbfd61f3217b5b',1,'pl::kalandyk::suplement::selector::domain::Suplement']]],
+  ['getid',['getId',['../classpl_1_1kalandyk_1_1suplement_1_1selector_1_1domain_1_1_health_problem.html#af7b8862d8af140f3cbe5260092d9c040',1,'pl.kalandyk.suplement.selector.domain.HealthProblem.getId()'],['../classpl_1_1kalandyk_1_1suplement_1_1selector_1_1domain_1_1_suplement.html#a77eb1fdd70d808c5fc6c673acfa24b12',1,'pl.kalandyk.suplement.selector.domain.Suplement.getId()']]],
+  ['getlinkurl',['getLinkUrl',['../classpl_1_1kalandyk_1_1suplement_1_1selector_1_1domain_1_1_suplement.html#a9593d5a415e082cc3e7bca395586011f',1,'pl::kalandyk::suplement::selector::domain::Suplement']]],
+  ['getname',['getName',['../classpl_1_1kalandyk_1_1suplement_1_1selector_1_1domain_1_1_health_problem.html#a20863cf670c92f33bfd09c6efcbad391',1,'pl.kalandyk.suplement.selector.domain.HealthProblem.getName()'],['../classpl_1_1kalandyk_1_1suplement_1_1selector_1_1domain_1_1_suplement.html#a1baa949cf0b6a7fc29f24e59667ed81b',1,'pl.kalandyk.suplement.selector.domain.Suplement.getName()']]],
+  ['getsuplementdescription',['getSuplementDescription',['../classpl_1_1kalandyk_1_1suplement_1_1selector_1_1domain_1_1_suplement.html#a5c8df83e9792f6a542ff53d21a4d647e',1,'pl::kalandyk::suplement::selector::domain::Suplement']]],
+  ['getsuplements',['getSuplements',['../classpl_1_1kalandyk_1_1suplement_1_1selector_1_1domain_1_1_health_problem.html#ac3240ab42e0e6242c432bb3cb03f85e2',1,'pl.kalandyk.suplement.selector.domain.HealthProblem.getSuplements()'],['../classpl_1_1kalandyk_1_1suplement_1_1selector_1_1rest_1_1_suplement_selector_controller.html#a8c55c6ab00f2f323be73ac5f0b42135f',1,'pl.kalandyk.suplement.selector.rest.SuplementSelectorController.getSuplements()']]]
+];
