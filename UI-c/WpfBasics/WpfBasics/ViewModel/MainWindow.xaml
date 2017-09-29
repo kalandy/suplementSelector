@@ -13,8 +13,6 @@
             <!--cel-->
             <TextBlock Text="Wybierz problem/cel:" FontWeight="Bold" Margin="0 10" />
             <ComboBox x:Name="ProblemComboBoxText" Padding="2" Margin="0,0,0.4,0" SelectionChanged="ProblemComboBoxText_SelectionChanged" ItemsSource="{Binding AllHealthProblems}">
-                <!--<ComboBoxItem Selected="ComboBoxItem_Selected" Content="Chroniczne zmęczenie"/>-->
-                <!--<ComboBoxItem Selected="ComboBoxItem_Selected_1" Content="Słaby sen"/>-->
             </ComboBox>
 
            
@@ -66,8 +64,7 @@
             Link do strony z ofertą suplementu
             </Hyperlink>
             </TextBlock>
-            <!--<TextBlock TextWrapping="Wrap" x:Name="LinkTextblock"  Text="{Binding SelectedSuplement.LinkUrl}" Margin="0 0 0 0" />-->
-
+          
 
         </StackPanel>
 
