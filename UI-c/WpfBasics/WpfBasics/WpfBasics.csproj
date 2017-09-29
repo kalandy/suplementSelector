@@ -74,6 +74,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Data\DataLoader.cs" />
+    <Compile Include="Data\HealthProblemsRestClient.cs" />
+    <Compile Include="Data\IHealthProblemsRestClient.cs" />
     <Compile Include="Data\SelectedItem.cs" />
     <Compile Include="Data\HealthProblem.cs" />
     <Compile Include="ViewModel\MainWindow.xaml.cs">

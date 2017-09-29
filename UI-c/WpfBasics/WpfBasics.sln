@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfBasics", "WpfBasics\WpfBasics.csproj", "{B8FF2ED3-C382-481E-81D4-D4CE9B7B98FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfBasicsTests1", "WpfBasicsTests1\WpfBasicsTests1.csproj", "{6B4EB19D-58DE-4113-8067-F4C6CAF45814}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{B8FF2ED3-C382-481E-81D4-D4CE9B7B98FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8FF2ED3-C382-481E-81D4-D4CE9B7B98FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8FF2ED3-C382-481E-81D4-D4CE9B7B98FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B4EB19D-58DE-4113-8067-F4C6CAF45814}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B4EB19D-58DE-4113-8067-F4C6CAF45814}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B4EB19D-58DE-4113-8067-F4C6CAF45814}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B4EB19D-58DE-4113-8067-F4C6CAF45814}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
