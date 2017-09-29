@@ -12,9 +12,9 @@ namespace WpfBasics.Data
 
     public class DataLoader
     {
-        HealthProblemsRestClient healthProblemsRest;
+        IHealthProblemsRestClient healthProblemsRest;
 
-        public DataLoader(HealthProblemsRestClient healthProblemsRestClient)
+        public DataLoader(IHealthProblemsRestClient healthProblemsRestClient)
         {
             this.healthProblemsRest = healthProblemsRestClient;
         }

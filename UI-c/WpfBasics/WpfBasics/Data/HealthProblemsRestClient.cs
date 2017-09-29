@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WpfBasics.Data
 {
-    public class HealthProblemsRestClient
+    public class HealthProblemsRestClient : IHealthProblemsRestClient
     {
         //http://restsharp.org/
         //zobaczenie ip do hosta - ipconfig /all
