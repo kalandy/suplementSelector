@@ -7,6 +7,11 @@ using System.ComponentModel;
 
 namespace WpfBasics.Data
 {
+    /*!
+* \brief Klasa HealthProblem, deklaracja składowych
+*        
+* gettey i settery
+*/
     public class HealthProblem : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
@@ -16,73 +21,78 @@ namespace WpfBasics.Data
             Suplements = new List<Suplement>();
         }
 
-        public String Name
+        public String Name /*!< pobieranie i ustawianie wartości składowej nazwa problemu */
         {
             get;
             set;
         }
 
-        public String Description
+        public String Description /*!< pobieranie i ustawianie wartości skladowej opis problemu */
         {
             get;
             set;
         }
 
-        public String Cause
+        public String Cause /*!< pobieranie i ustawianie wartości składowej przyczyny problemu */
         {
             get;
             set;
         }
 
-        public List<Suplement> Suplements
+        public List<Suplement> Suplements /*!< pobieranie i ustawianie składowej listy suplementów */
         {
-            get;
+            get; 
             set;
         }
 
-        public override string ToString()
+        public override string ToString() /*!< przeładowanie metody */
         {
-            return Name;
+            return Name; /*!< zwraca nazwe problemu */
         }
     }
 
-    public class Suplement : INotifyPropertyChanged
+    /*!
+* \brief Klasa Suplement, deklaracja składowych
+*        
+* gettey i settery
+*/
+    public class Suplement : INotifyPropertyChanged /*!< korzystanie z biblioteki Inotify */
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public String Name
+        public String Name /*!< pobieranie i ustawianie wartości składowej nazwa suplementu */
         {
             get;
             set;
         }
 
-        public String ChosenSuplement
+        public String ChosenSuplement /*!< pobieranie i ustawianie wartości składowej wybrany suplement */
         {
             get;
             set;
         }
 
-        public String SuplementDescription
+        public String SuplementDescription /*!< pobieranie i ustawianie wartości składowej opis suplementu */
         {
             get;
             set;
         }
 
-        public String HowTo
+        public String HowTo /*!< pobieranie i ustawianie wartości składowej w której opisane jest jak stosować, dawkować suplement */
         {
             get;
             set;
         }
 
-        public String LinkUrl
+        public String LinkUrl /*!< pobieranie i ustawianie wartości składowej z adresem URL do strony internetowej z ofertą */
         {
             get;
             set;
         }
 
-        public override string ToString()
+        public override string ToString() /*!< przeładowanie metody */
         {
-            return Name;
+            return Name; /*!< zwraca nazwe suplementu */
         }
     }
 }

@@ -8,7 +8,11 @@ using System.Threading.Tasks;
 namespace WpfBasics.Data
 {
 
-  
+    /*!
+  * \brief Klasa DataLoader, pobieranie danych
+  *        
+  * ustawienie obiektu dla Bindingu, utworzenie dataLoader
+  */
 
     public class DataLoader
     {
@@ -19,6 +23,11 @@ namespace WpfBasics.Data
             this.healthProblemsRest = healthProblemsRestClient;
         }
 
+        /*!
+* \brief metoda LoadData - wczytanie danych
+*        
+*Konwersja JSON'a na obiekt z C#, ustawienie danych dla UI
+*/
         public SelectedItem LoadData()
         {
             var healthProblemsString = healthProblemsRest.GetHealthProblemsJson();

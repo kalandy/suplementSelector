@@ -23,8 +23,12 @@ namespace WpfBasics
     /// Logika interakcji dla klasy MainWindow.xaml
     /// </summary>
     /// 
- 
 
+    /*!
+* \brief Klasa MainWindow, obsługa zdarzeń
+*        
+* ustawienie obiektu dla Bindingu, utworzenie dataLoader, metoda przekierowująca na stronę internetową
+*/
     public partial class MainWindow : Window
     {
         SelectedItem selectedItem;

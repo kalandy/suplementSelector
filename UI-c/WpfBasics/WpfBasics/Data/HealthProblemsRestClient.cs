@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace WpfBasics.Data
 {
+    /*!
+* \brief Klasa HealthProblemRestClient, utworzenie Resta, połączenie z serwerem Javy
+*        
+* http://restsharp.org/
+*/
     public class HealthProblemsRestClient : IHealthProblemsRestClient
     {
         //http://restsharp.org/
@@ -15,8 +20,8 @@ namespace WpfBasics.Data
         RestRequest restRequest = new RestRequest("healthProblems", Method.GET);
 
 
-        public string GetHealthProblemsJson() {
-            //pobranie JSON'a
+        public string GetHealthProblemsJson() {   /*!< pobranie JSON'a */
+          
             return restClient.Execute(restRequest).Content;
         }
     }
