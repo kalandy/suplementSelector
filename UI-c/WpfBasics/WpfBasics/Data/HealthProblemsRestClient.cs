@@ -16,7 +16,7 @@ namespace WpfBasics.Data
     {
         //http://restsharp.org/
         //zobaczenie ip do hosta - ipconfig /all
-        RestClient restClient = new RestClient("http://10.0.2.2:8080" /* adres serwera JAVovego, musi być włączony*/);
+        RestClient restClient = new RestClient("http://ec2-3-17-4-120.us-east-2.compute.amazonaws.com:8080" /* adres serwera JAVovego, musi być włączony*/);
         RestRequest restRequest = new RestRequest("healthProblems", Method.GET);
 
 
