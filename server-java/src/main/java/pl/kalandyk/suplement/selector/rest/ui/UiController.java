@@ -14,6 +14,7 @@ import pl.kalandyk.suplement.selector.repository.SuplementRepository;
 import pl.kalandyk.suplement.selector.repository.UserRepository;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 @Controller
@@ -69,18 +70,43 @@ public class UiController {
         return "edit-suplement";
     }
 
+    @GetMapping("/ui/suplements/remove/{id}")
+    public String removeSuplement(@PathVariable("id") Long id, Model model) {
+        suplementRepository.delete(id);
+        return "redirect:/ui/suplements";
+    }
+
     @PostMapping("/ui/suplements/{id}")
-    public String editSuplementPost(@PathVariable("id") Long id, Suplement suplement, Model model) {
-        suplement.setId(id);
+    public String editSuplementPost(Suplement suplement, Model model) {
         suplementRepository.save(suplement);
 
         return "redirect:/ui/suplements";
+    }
+
+    @GetMapping("/ui/suplements/new")
+    public String newSuplement(Model model) {
+        Suplement suplement = new Suplement();
+        suplement.setId(0L);
+        model.addAttribute("suplement", suplement);
+
+        return "edit-suplement";
     }
 
     @GetMapping("/ui/health-problems")
     public String healthProblems(Model model) {
         loadDataToModel(model);
         return "health-problems";
+    }
+
+    @GetMapping("/ui/health-problems/new")
+    public String newHealthProblem(Model model) {
+        HealthProblem healthProblem = new HealthProblem();
+        healthProblem.setId(0L);
+        model.addAttribute("healthProblem", healthProblem);
+        model.addAttribute("allSuplements", suplementRepository.findAll());
+        model.addAttribute("selectedIds", new ArrayList<>());
+
+        return "edit-health-problem";
     }
 
     @GetMapping("/ui/health-problems/{id}")
@@ -91,6 +117,12 @@ public class UiController {
         model.addAttribute("selectedIds", healthProblem.getSuplements().stream().map(Suplement::getId).collect(
                 Collectors.toList()));
         return "edit-health-problem";
+    }
+
+    @GetMapping("/ui/health-problems/remove/{id}")
+    public String removeHealthProblems(@PathVariable("id") Long id, Model model) {
+        healthProblemRepository.delete(id);
+        return "redirect:/ui/health-problems";
     }
 
     @PostMapping("/ui/health-problems/{id}")
