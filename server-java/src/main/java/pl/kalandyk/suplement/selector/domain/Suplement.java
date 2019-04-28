@@ -19,8 +19,6 @@ public class Suplement {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO) /*!<automatyczne generowanie id */
-
-
     private Long id; /*!< zmienna ID do bazy danych */
 
     private String name; /*!< Nazwa suplementu */
@@ -76,4 +74,8 @@ public class Suplement {
     public void setLinkUrl(String linkUrl) {
         this.linkUrl = linkUrl;
     } /*!< ustawienie adresu do strony z suplementem */
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 }

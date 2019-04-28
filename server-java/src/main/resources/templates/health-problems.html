@@ -21,7 +21,7 @@
             <a th:href="@{/ui/}" class="navbar-left"><img width="150px" th:src="@{/img/logo_transparent.png}"/></a>
         </div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li class="active"><a th:href="@{/ui/}">Home</a></li>
             <li><a th:href="@{/ui/health-problems}">Problemy zdrowotne</a></li>
             <li><a th:href="@{/ui/suplements}">Suplementy</a></li>
             <li><a th:href="@{/ui/contact}">Kontakt</a></li>
@@ -39,14 +39,29 @@
             <th>Suplementy</th>
         </tr>
         </thead>
-        <tbody>
-        <tr th:each="healthProblem : ${healthProblems}">
+        <tbody th:each="healthProblem : ${healthProblems}">
+        <tr>
             <td th:text="${healthProblem.name}"></td>
             <td th:text="${healthProblem.description}"></td>
             <td th:text="${healthProblem.cause}"></td>
+            <td><a th:href="'/ui/health-problems/' + ${healthProblem.id}" class="btn btn-info" role="button">Edytuj</a></td>
+        </tr>
+        <tr>
+            <td>Suplementy na podane dolegliwości:</td>
+            <td>
+                <div class="list-group list-group-horizontal">
+                    <th:block th:each="suplement : ${healthProblem.suplements}">
+                        <a th:text="${suplement.name}"
+                           class="list-group-item list-group-item-action"
+                           th:href="'/ui/suplements/' + ${suplement.id}">
+                        </a>
+                    </th:block>
+                </div>
+            </td>
         </tr>
         </tbody>
     </table>
+
 </div>
 </body>
 </html>
