@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<html lang="pl" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -30,7 +31,8 @@
     </div>
 </nav>
 <div class="container">
-    <a th:href="@{/ui/suplements/new}" class="btn btn-info" role="button">Dodaj nowy</a>
+    <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/ui/suplements/new}" class="btn btn-info" role="button">Dodaj
+        nowy</a>
     <table class="table">
         <thead>
         <tr>
@@ -46,8 +48,10 @@
             <td th:text="${suplement.suplementDescription}"></td>
             <td th:text="${suplement.linkUrl}"></td>
             <td th:text="${suplement.howTo}"></td>
-            <td><a th:href="'/ui/suplements/' + ${suplement.id}" class="btn btn-info" role="button">Edytuj</a></td>
-            <td><a th:href="'/ui/suplements/remove/' + ${suplement.id}" class="btn btn-info" role="button">Usuń</a></td>
+            <td><a sec:authorize="hasRole('ROLE_ADMIN')" th:href="'/ui/suplements/' + ${suplement.id}"
+                   class="btn btn-info" role="button">Edytuj</a></td>
+            <td><a sec:authorize="hasRole('ROLE_ADMIN')" th:href="'/ui/suplements/remove/' + ${suplement.id}"
+                   class="btn btn-info" role="button">Usuń</a></td>
         </tr>
         </tbody>
     </table>

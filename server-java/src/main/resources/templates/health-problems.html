@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<html lang="pl" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -31,7 +32,8 @@
 </nav>
 
 <div class="container">
-    <a th:href="@{/ui/health-problems/new}" class="btn btn-info" role="button">Dodaj nowy</a>
+    <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/ui/health-problems/new}" class="btn btn-info" role="button">Dodaj
+        nowy</a>
     <table class="table">
         <thead>
         <tr>
@@ -46,8 +48,10 @@
             <td th:text="${healthProblem.name}"></td>
             <td th:text="${healthProblem.description}"></td>
             <td th:text="${healthProblem.cause}"></td>
-            <td><a th:href="'/ui/health-problems/' + ${healthProblem.id}" class="btn btn-info" role="button">Edytuj</a></td>
-            <td><a th:href="'/ui/health-problems/remove/' + ${healthProblem.id}" class="btn btn-info" role="button">Usuń</a></td>
+            <td><a sec:authorize="hasRole('ROLE_ADMIN')" th:href="'/ui/health-problems/' + ${healthProblem.id}"
+                   class="btn btn-info" role="button">Edytuj</a></td>
+            <td><a sec:authorize="hasRole('ROLE_ADMIN')" th:href="'/ui/health-problems/remove/' + ${healthProblem.id}"
+                   class="btn btn-info" role="button">Usuń</a></td>
         </tr>
         <tr>
             <td>Suplementy na podane dolegliwości:</td>
