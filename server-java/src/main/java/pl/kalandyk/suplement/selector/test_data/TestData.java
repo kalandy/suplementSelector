@@ -1,14 +1,39 @@
 package pl.kalandyk.suplement.selector.test_data;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import pl.kalandyk.suplement.selector.domain.HealthProblem;
 import pl.kalandyk.suplement.selector.domain.Suplement;
+import pl.kalandyk.suplement.selector.repository.HealthProblemRepository;
 
+import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 
+
+@Component
+
 public class TestData {
 
-    private void initSuplements(List<Suplement> suplements) {
+    @Autowired
+    private HealthProblemRepository healthProblemRepository; /*!< repozytorium bazy danych - problem zdrowotny */
+
+
+//    @PostConstruct
+//    public void test() {
+//        List<HealthProblem> healthProblems = new ArrayList<>();
+//        initHealthProblems(healthProblems);
+//        healthProblemRepository.save(healthProblems);
+//        System.out.println();
+//    }
+
+    public static void main(String[] args) {
+        List<HealthProblem> healthProblems = new ArrayList<>();
+        initHealthProblems(healthProblems);
+        System.out.println();
+    }
+
+    private static void initSuplements(List<Suplement> suplements) {
         Suplement suplement1 = new Suplement();
         suplement1.setName("Tyrozyna");
         suplement1.setSuplementDescription(
@@ -60,7 +85,7 @@ public class TestData {
         suplements.add(suplement3);
     }
 
-    private void initSuplements2(List<Suplement> suplements) {
+    private static void initSuplements2(List<Suplement> suplements) {
         Suplement suplement1 = new Suplement();
         suplement1.setName("5-HTP");
         suplement1.setSuplementDescription(
@@ -121,7 +146,7 @@ public class TestData {
         suplements.add(suplement3);
     }
 
-    private void initSuplements3(List<Suplement> suplements) {
+    private static void initSuplements3(List<Suplement> suplements) {
         Suplement suplement1 = new Suplement();
         suplement1.setName("Hupercyna A");
         suplement1.setSuplementDescription(
@@ -179,7 +204,7 @@ public class TestData {
         suplements.add(suplement3);
     }
 
-    private void initSuplements4(List<Suplement> suplements) {
+    private static void initSuplements4(List<Suplement> suplements) {
 
         Suplement suplement1 = new Suplement();
         suplement1.setName("Ashwagandha");
@@ -235,7 +260,7 @@ public class TestData {
         suplements.add(suplement3);
     }
 
-    private void initHealthProblems(List<HealthProblem> healthProblems) {
+    private static void initHealthProblems(List<HealthProblem> healthProblems) {
         HealthProblem healthProblem1 = new HealthProblem();
         healthProblem1.setName("Chroniczne zmęczenie");
         healthProblem1.setCause(
