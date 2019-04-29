@@ -25,13 +25,14 @@
             <li><a th:href="@{/ui/health-problems}">Problemy zdrowotne</a></li>
             <li><a th:href="@{/ui/suplements}">Suplementy</a></li>
             <li><a th:href="@{/ui/contact}">Kontakt</a></li>
+            <li><a th:href="@{/logout}">Wyloguj</a></li>
         </ul>
     </div>
 </nav>
 
 
 <div class="container">
-    <form action="#" th:action="@{/adduser}" th:object="${user}" method="post">
+    <form action="#" th:action="@{/ui/signup}" th:object="${user}" method="post">
         <div class="form-group">
             <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
             <label for="exampleInputEmail1">Email</label>

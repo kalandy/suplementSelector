@@ -1,5 +1,6 @@
 package pl.kalandyk.suplement.selector.rest.ui;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -23,18 +24,31 @@ public class UiController {
     private final UserRepository userRepository;
     private final HealthProblemRepository healthProblemRepository;
     private final SuplementRepository suplementRepository;
+    private final PasswordEncoder passwordEncoder;
 
     public UiController(UserRepository userRepository,
             HealthProblemRepository healthProblemRepository,
-            SuplementRepository suplementRepository) {
+            SuplementRepository suplementRepository,
+            PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.healthProblemRepository = healthProblemRepository;
         this.suplementRepository = suplementRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
-    @GetMapping("/ui/")
+    @GetMapping({"/ui/", "/"})
     public String index() {
         return "redirect:/ui/suplements";
+    }
+
+    @GetMapping("/login")
+    public String login() {
+        return "my-login";
+    }
+
+    @GetMapping("/ui/login-error")
+    public String errorLogin() {
+        return "my-login";
     }
 
     @GetMapping("/ui/contact")
@@ -47,15 +61,16 @@ public class UiController {
         return "add-user";
     }
 
-    @PostMapping("/ui/adduser")
+    @PostMapping("/ui/signup")
     public String addUser(@Valid User user, BindingResult result, Model model) {
         if (result.hasErrors()) {
             return "add-user";
         }
-
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setRole("ROLE_USER");
         userRepository.save(user);
         loadDataToModel(model);
-        return "suplements";
+        return "redirect:/login";
     }
 
     @GetMapping("/ui/suplements")
