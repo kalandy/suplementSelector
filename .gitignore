@@ -73,3 +73,6 @@ bin/
 obj/
 packages/
 .vs/
+*.iml
+*.db
+**/target/
