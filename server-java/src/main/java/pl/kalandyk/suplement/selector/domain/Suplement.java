@@ -6,11 +6,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- * Created by marcinkalandyk on 02.05.2017.
+ * Created by marcinkalandyk on 02.05.2018.
  */
 
 /*!
-* \brief Klasa Suplement, klasa deklarująca zmienne suplementów
+* \brief Klasa Suplement
 *
 * pokazanie springowi ze Suplement jest tabela w bazie danych, automatyczne generowanie ID
 */

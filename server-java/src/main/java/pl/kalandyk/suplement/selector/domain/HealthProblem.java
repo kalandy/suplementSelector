@@ -10,11 +10,11 @@ import javax.persistence.ManyToMany;
 import java.util.List;
 
 /**
- * Created by marcinkalandyk on 02.05.2017.
+ * Created by marcinkalandyk on 02.05.2018.
  */
 
 /*!
-* \brief Klasa HealthProblem, klasa deklarująca zmienne problemów zdrowotnych
+* \brief Klasa HealthProblem
 *
 * pokazanie springowi ze HealthProblem jest tabela w bazie danych, automatyczne generowanie ID
 */

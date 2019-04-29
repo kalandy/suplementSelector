@@ -1,5 +1,6 @@
 package pl.kalandyk.suplement.selector.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,12 +20,16 @@ public class DbConfig {
 * \brief Pokazanie springowi namiarów na baze danych
 */
     @Bean
-    public DataSource dataSource() { /*!< ustawienia sterownika do bazy danych,adres do bazy (w pliku) */
+    public DataSource dataSource(
+            @Value("${db.url}") String dbUrl /* konfigurowalny adres do bazy*/) {
+
         DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
 
-        dataSourceBuilder.driverClassName("org.sqlite.JDBC"); //ustawienia sterownika do bazy danych
+        //ustawienia sterownika do bazy danych
+        dataSourceBuilder.driverClassName("org.sqlite.JDBC");
 
-        dataSourceBuilder.url("jdbc:sqlite:suplementSelector.db"); //adres do bazy (w pliku)
+        //adres do bazy (w pliku)
+        dataSourceBuilder.url(dbUrl);
 
         return dataSourceBuilder.build();
     }
