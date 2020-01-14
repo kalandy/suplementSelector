@@ -1,5 +1,6 @@
 package pl.kalandyk.suplement.selector.rest.ui;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +14,7 @@ import pl.kalandyk.suplement.selector.domain.User;
 import pl.kalandyk.suplement.selector.repository.HealthProblemRepository;
 import pl.kalandyk.suplement.selector.repository.SuplementRepository;
 import pl.kalandyk.suplement.selector.repository.UserRepository;
+import pl.kalandyk.suplement.selector.test_data.TestData;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
@@ -25,20 +27,29 @@ public class UiController {
     private final HealthProblemRepository healthProblemRepository;
     private final SuplementRepository suplementRepository;
     private final PasswordEncoder passwordEncoder;
+    private final TestData testData;
 
+    @Autowired
     public UiController(UserRepository userRepository,
-            HealthProblemRepository healthProblemRepository,
-            SuplementRepository suplementRepository,
-            PasswordEncoder passwordEncoder) {
+                        HealthProblemRepository healthProblemRepository,
+                        SuplementRepository suplementRepository,
+                        PasswordEncoder passwordEncoder, TestData testData) {
         this.userRepository = userRepository;
         this.healthProblemRepository = healthProblemRepository;
         this.suplementRepository = suplementRepository;
         this.passwordEncoder = passwordEncoder;
+        this.testData = testData;
     }
 
     @GetMapping({"/ui/", "/"})
     public String index() {
         return "redirect:/ui/suplements";
+    }
+
+    @GetMapping("/generate-testData")
+    public String generateTestData() {
+        testData.initTestData();
+        return "contact";
     }
 
     @GetMapping("/login")
