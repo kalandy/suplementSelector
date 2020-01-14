@@ -19,21 +19,20 @@ public class TestData {
     private HealthProblemRepository healthProblemRepository; /*!< repozytorium bazy danych - problem zdrowotny */
 
 
-//    @PostConstruct
-//    public void test() {
-//        List<HealthProblem> healthProblems = new ArrayList<>();
-//        initHealthProblems(healthProblems);
-//        healthProblemRepository.save(healthProblems);
-//        System.out.println();
-//    }
+    public void initTestData() {
+        List<HealthProblem> healthProblems = new ArrayList<>();
+        initHealthProblems(healthProblems);
+        healthProblemRepository.save(healthProblems);
+        System.out.println();
+    }
 
-    public static void main(String[] args) {
+    public void main(String[] args) {
         List<HealthProblem> healthProblems = new ArrayList<>();
         initHealthProblems(healthProblems);
         System.out.println();
     }
 
-    private static void initSuplements(List<Suplement> suplements) {
+    private void initSuplements(List<Suplement> suplements) {
         Suplement suplement1 = new Suplement();
         suplement1.setName("Tyrozyna");
         suplement1.setSuplementDescription(
@@ -85,7 +84,7 @@ public class TestData {
         suplements.add(suplement3);
     }
 
-    private static void initSuplements2(List<Suplement> suplements) {
+    private void initSuplements2(List<Suplement> suplements) {
         Suplement suplement1 = new Suplement();
         suplement1.setName("5-HTP");
         suplement1.setSuplementDescription(
@@ -146,7 +145,7 @@ public class TestData {
         suplements.add(suplement3);
     }
 
-    private static void initSuplements3(List<Suplement> suplements) {
+    private void initSuplements3(List<Suplement> suplements) {
         Suplement suplement1 = new Suplement();
         suplement1.setName("Hupercyna A");
         suplement1.setSuplementDescription(
@@ -204,7 +203,7 @@ public class TestData {
         suplements.add(suplement3);
     }
 
-    private static void initSuplements4(List<Suplement> suplements) {
+    private  void initSuplements4(List<Suplement> suplements) {
 
         Suplement suplement1 = new Suplement();
         suplement1.setName("Ashwagandha");
@@ -260,7 +259,7 @@ public class TestData {
         suplements.add(suplement3);
     }
 
-    private static void initHealthProblems(List<HealthProblem> healthProblems) {
+    private void initHealthProblems(List<HealthProblem> healthProblems) {
         HealthProblem healthProblem1 = new HealthProblem();
         healthProblem1.setName("Chroniczne zmęczenie");
         healthProblem1.setCause(
