@@ -10,6 +10,7 @@ import pl.kalandyk.suplement.selector.domain.HealthProblem;
 import pl.kalandyk.suplement.selector.domain.Suplement;
 import pl.kalandyk.suplement.selector.repository.HealthProblemRepository;
 import pl.kalandyk.suplement.selector.repository.SuplementRepository;
+import pl.kalandyk.suplement.selector.test_data.TestData;
 
 
 /*!
@@ -21,15 +22,13 @@ import pl.kalandyk.suplement.selector.repository.SuplementRepository;
 @RestController
 public class SuplementSelectorController {
 
-    private SuplementRepository suplementRepository; /*!< repozytorium bazy danych - suplementy */
-    private HealthProblemRepository healthProblemRepository; /*!< repozytorium bazy danych - problem zdrowotny */
-
     @Autowired
-    public SuplementSelectorController(SuplementRepository suplementRepository,
-            HealthProblemRepository healthProblemRepository) {
-        this.suplementRepository = suplementRepository;
-        this.healthProblemRepository = healthProblemRepository;
-    }
+    private SuplementRepository suplementRepository; /*!< repozytorium bazy danych - suplementy */
+    @Autowired
+    private HealthProblemRepository healthProblemRepository; /*!< repozytorium bazy danych - problem zdrowotny */
+    @Autowired
+    private TestData testData;
+
 
     @RequestMapping(value = "/suplements", //adres
             method = RequestMethod.GET, //typ zapytania
@@ -54,6 +53,14 @@ public class SuplementSelectorController {
             method = RequestMethod.GET, /*!< typ zapytania */
             produces = "application/json") // zwracamy JSON'a
     public Iterable<HealthProblem> getAllHealthProblems() { return healthProblemRepository.findAll(); /*!< lista pobierająca problemy zdrowotne */
+    }
+
+    @RequestMapping(value = "/initData", //adres
+            method = RequestMethod.GET, //typ zapytania
+            produces = "application/json") // zwracamy JSON'a
+    public void initData() {
+        testData.initTestData();
+
     }
 
     //TODO: dodać metode do dodawania (method = RequestMethod.POST) dla healthProblems
