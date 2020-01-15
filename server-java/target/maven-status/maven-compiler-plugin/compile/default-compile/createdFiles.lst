@@ -1,9 +1,0 @@
-pl/kalandyk/suplement/selector/config/DbConfig.class
-pl/kalandyk/suplement/selector/rest/SuplementSelectorController.class
-pl/kalandyk/suplement/selector/Application.class
-pl/kalandyk/suplement/selector/domain/HealthProblem.class
-pl/kalandyk/suplement/selector/test_data/TestData.class
-pl/kalandyk/suplement/selector/config/SQLiteDialect.class
-pl/kalandyk/suplement/selector/repository/HealthProblemRepository.class
-pl/kalandyk/suplement/selector/domain/Suplement.class
-pl/kalandyk/suplement/selector/repository/SuplementRepository.class

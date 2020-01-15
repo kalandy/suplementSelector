@@ -1,12 +1,36 @@
 package pl.kalandyk.suplement.selector.test_data;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import pl.kalandyk.suplement.selector.domain.HealthProblem;
 import pl.kalandyk.suplement.selector.domain.Suplement;
+import pl.kalandyk.suplement.selector.repository.HealthProblemRepository;
 
+import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 
+
+@Component
+
 public class TestData {
+
+    @Autowired
+    private HealthProblemRepository healthProblemRepository; /*!< repozytorium bazy danych - problem zdrowotny */
+
+
+    public void initTestData() {
+        List<HealthProblem> healthProblems = new ArrayList<>();
+        initHealthProblems(healthProblems);
+        healthProblemRepository.save(healthProblems);
+        System.out.println();
+    }
+
+    public void main(String[] args) {
+        List<HealthProblem> healthProblems = new ArrayList<>();
+        initHealthProblems(healthProblems);
+        System.out.println();
+    }
 
     private void initSuplements(List<Suplement> suplements) {
         Suplement suplement1 = new Suplement();
@@ -179,7 +203,7 @@ public class TestData {
         suplements.add(suplement3);
     }
 
-    private void initSuplements4(List<Suplement> suplements) {
+    private  void initSuplements4(List<Suplement> suplements) {
 
         Suplement suplement1 = new Suplement();
         suplement1.setName("Ashwagandha");

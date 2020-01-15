@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta login="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>SuplementSelector</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a th:href="@{/ui/}" class="navbar-left"><img width="150px" th:src="@{/img/logo_transparent.png}"/></a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a th:href="@{/ui/}">Home</a></li>
+            <li><a th:href="@{/ui/health-problems}">Problemy zdrowotne</a></li>
+            <li><a th:href="@{/ui/suplements}">Suplementy</a></li>
+            <li><a th:href="@{/ui/contact}">Kontakt</a></li>
+            <li><a th:href="@{/logout}">Wyloguj</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/ui/health-problems/new}" class="btn btn-info" role="button">Dodaj
+        nowy</a>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Nazwa</th>
+            <th>Opis</th>
+            <th>Przyczyny</th>
+            <th>Suplementy</th>
+        </tr>
+        </thead>
+        <tbody th:each="healthProblem : ${healthProblems}">
+        <tr>
+            <td th:text="${healthProblem.name}"></td>
+            <td th:text="${healthProblem.description}"></td>
+            <td th:text="${healthProblem.cause}"></td>
+            <td><a sec:authorize="hasRole('ROLE_ADMIN')" th:href="'/ui/health-problems/' + ${healthProblem.id}"
+                   class="btn btn-info" role="button">Edytuj</a></td>
+            <td><a sec:authorize="hasRole('ROLE_ADMIN')" th:href="'/ui/health-problems/remove/' + ${healthProblem.id}"
+                   class="btn btn-info" role="button">Usuń</a></td>
+        </tr>
+        <tr>
+            <td>Suplementy na podane dolegliwości:</td>
+            <td>
+                <div class="list-group list-group-horizontal">
+                    <th:block th:each="suplement : ${healthProblem.suplements}">
+                        <a th:text="${suplement.name}"
+                           class="list-group-item list-group-item-action"
+                           th:href="'/ui/suplements/' + ${suplement.id}">
+                        </a>
+                    </th:block>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+</body>
+</html>

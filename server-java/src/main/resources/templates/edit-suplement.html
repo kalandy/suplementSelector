@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta login="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>SuplementSelector</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a th:href="@{/ui/}" class="navbar-left"><img width="150px" th:src="@{/img/logo_transparent.png}"/></a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a th:href="@{/ui/}">Home</a></li>
+            <li><a th:href="@{/ui/health-problems}">Problemy zdrowotne</a></li>
+            <li><a th:href="@{/ui/suplements}">Suplementy</a></li>
+            <li><a th:href="@{/ui/contact}">Kontakt</a></li>
+            <li><a th:href="@{/logout}">Wyloguj</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <form th:action="'/ui/suplements/' + ${suplement.id}" th:object="${suplement}" method="post">
+        <div class="form-group">
+            <label for="field1">Nazwa</label>
+            <input type="text" class="form-control" id="field1" th:field="*{name}"/>
+
+            <label for="field2">Opis</label>
+            <textarea class="form-control" id="field2" aria-describedby="emailHelp" th:field="*{suplementDescription}"
+                      rows="6"/>
+
+            <label for="field3">Dawkowanie</label>
+            <textarea rows="3" class="form-control" id="field3" th:field="*{howTo}"/>
+
+            <label for="field4">Link</label>
+            <input type="text" class="form-control" id="field4"
+                   th:field="*{linkUrl}"/>
+
+        </div>
+
+        <button sec:authorize="hasRole('ROLE_ADMIN')" type="submit" class="btn btn-primary">Zapisz</button>
+    </form>
+
+</div>
+</body>
+</html>

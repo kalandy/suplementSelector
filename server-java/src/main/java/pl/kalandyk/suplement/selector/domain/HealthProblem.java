@@ -1,20 +1,14 @@
 package pl.kalandyk.suplement.selector.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.List;
 
 /**
- * Created by marcinkalandyk on 02.05.2017.
+ * Created by marcinkalandyk on 02.05.2018.
  */
 
 /*!
-* \brief Klasa HealthProblem, klasa deklarująca zmienne problemów zdrowotnych
+* \brief Klasa HealthProblem
 *
 * pokazanie springowi ze HealthProblem jest tabela w bazie danych, automatyczne generowanie ID
 */
@@ -29,7 +23,7 @@ public class HealthProblem {
     private String description; /*!< Opis problemu zdrowotnego */
     private String cause; /*!< Przyczyna problemu zdrowotnego */
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "HEALTHPROBLEM_SUPLEMENT",
             joinColumns = @JoinColumn(name = "HEALTH_PROBLEM_ID", referencedColumnName = "ID"),
