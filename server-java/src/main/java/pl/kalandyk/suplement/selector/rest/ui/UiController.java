@@ -1,6 +1,7 @@
 package pl.kalandyk.suplement.selector.rest.ui;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,12 +33,12 @@ public class UiController {
     @Autowired
     public UiController(UserRepository userRepository,
                         HealthProblemRepository healthProblemRepository,
-                        SuplementRepository suplementRepository,
-                        PasswordEncoder passwordEncoder, TestData testData) {
+                        SuplementRepository suplementRepository
+                        , TestData testData) {
         this.userRepository = userRepository;
         this.healthProblemRepository = healthProblemRepository;
         this.suplementRepository = suplementRepository;
-        this.passwordEncoder = passwordEncoder;
+        this.passwordEncoder = new BCryptPasswordEncoder(11);
         this.testData = testData;
     }
 
