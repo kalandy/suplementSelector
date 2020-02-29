@@ -19,7 +19,11 @@ public class TestData {
     private HealthProblemRepository healthProblemRepository; /*!< repozytorium bazy danych - problem zdrowotny */
 
 
+    @PostConstruct
     public void initTestData() {
+        if (healthProblemRepository.findAll().iterator().hasNext()) {
+            return;
+        }
         List<HealthProblem> healthProblems = new ArrayList<>();
         initHealthProblems(healthProblems);
         healthProblemRepository.save(healthProblems);
@@ -203,7 +207,7 @@ public class TestData {
         suplements.add(suplement3);
     }
 
-    private  void initSuplements4(List<Suplement> suplements) {
+    private void initSuplements4(List<Suplement> suplements) {
 
         Suplement suplement1 = new Suplement();
         suplement1.setName("Ashwagandha");

@@ -44,7 +44,6 @@ public class SuplementSelectorController {
         Suplement save = suplementRepository.save(suplement);
         return save;
     }
-
     //TODO: dodac metode do usuwanie (method = RequestMethod.DELETE) dla suplementow
 
 
